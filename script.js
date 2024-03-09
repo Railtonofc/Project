@@ -1,23 +1,27 @@
-let nome = "Railton"
-let xp = 7001
-let nivel = ""
-
-if (xp <= 1000) {
-  nivel = "Ferro"
-} else if (xp <= 2000) {
-  nivel = "Bronze"
-} else if (xp <= 6000) {
-  nivel = "Prata"
-} else if (xp <= 7000) {
-  nivel = "Ouro"
-} else if (xp <= 8000) {
-  nivel = "Platina"
-} else if (xp <= 9000) {
-  nivel = "Ascendente"
-} else if (xp <= 10000) {
-  nivel = "Imortal"
-} else if (xp >= 10001) {
-  nivel = "Radiante"
+function matches(victory, defeat) {
+  let result = victory - defeat
+  return result
 }
 
-console.log(`O Herói de nome ${nome} está no nível de ${nivel}`)
+function rank() {
+  let resultRank = matches(50, 20)
+  let nivel = ""
+  if (resultRank <= 10) {
+    nivel = "Ferro"
+  } else if (resultRank <= 20) {
+    nivel = "Bronze"
+  } else if (resultRank <= 50) {
+    nivel = "Prata"
+  } else if (resultRank <= 80) {
+    nivel = "Ouro"
+  } else if (resultRank <= 90) {
+    nivel = "Diamante"
+  } else if (resultRank <= 100) {
+    nivel = "Lendário"
+  } else if (resultRank >= 100) {
+    nivel = "Imortal"
+  }
+  return `O Herói tem de saldo de ${resultRank} e está no nível de ${nivel}`
+}
+
+console.log(rank())
